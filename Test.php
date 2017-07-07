@@ -1,29 +1,25 @@
 <?php
-
+require 'calculator.php';
+ 
 class Test extends PHPUnit_Framework_TestCase
 {
-  public function testOnePlusOne() {
-    $this->assertEquals(1+1,2);
-    }
-
-  /**
-  * @expectedException PHPUnit_Framework_Error
-  */
-
-  public function testFailingInclude()
+    private $calculator;
+ 
+    protected function setUp()
     {
-        include 'not_existing_file.php';
+        $this->calculator = new calculator();
     }
-
-/*
-#  public function testTitle()
-#    {
-#        $this->open("/index.htm");
-#        $title = $this->getTitle();
-#        $this->assertEquals('Home', $title);
-#    }
-*/
-
+ 
+    protected function tearDown()
+    {
+        $this->calculator = NULL;
+    }
+ 
+    public function testAdd()
+    {
+        $result = $this->calculator->add(1, 2);
+        $this->assertEquals(3, $result);
+    }
+ 
 }
-?>
 
