@@ -23,4 +23,5 @@ script:
 notifications:
   email:
     - majocabr.93@gmail.com
+
   irc: "irc.freenode.org#yourfavouriteroomfortravis"
